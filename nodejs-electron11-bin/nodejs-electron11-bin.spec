@@ -5,7 +5,7 @@ Summary:        Build cross-platform desktop apps with JavaScript, HTML, and CSS
 License:        MIT
 Url:            https://github.com/electron/electron
 Source0:        https://github.com/electron/electron/releases/download/v%{version}/electron-v%{version}-linux-x64.zip
-Source1:        electron-launcher.sh
+Source1:        electron11-launcher.sh
 Source2:        https://raw.githubusercontent.com/electron/electron/main/LICENSE
 
 BuildRequires:  bsdtar
