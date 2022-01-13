@@ -1,6 +1,6 @@
 Name:           icalingua
 Version:        2.4.5
-Release:        2
+Release:        3
 Summary:        A Linux client for QQ and more
 License:        AGPL-3.0
 Url:            https://github.com/Icalingua/Icalingua
@@ -21,6 +21,7 @@ A Linux client for QQ and more
 %prep
 %autosetup -n Icalingua-%{version}
 %define BUILD_DIR %{_builddir}/Icalingua-%{version}/icalingua
+sed -i 's|"isProduction": false|"isProduction": true|' %{_builddir}/Icalingua-%{version}/icalingua/static/version.json
 
 %build
 cd %{BUILD_DIR}
