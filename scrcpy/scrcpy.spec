@@ -21,6 +21,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(sdl2)
 BuildRequires:  pkgconfig(ffms2)
 BuildRequires:  pkgconfig(libusb-1.0)
+BuildRequires:  vulkan-loader
 
 Requires:       adb
 
