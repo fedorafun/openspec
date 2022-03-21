@@ -23,6 +23,7 @@ BuildRequires: alien
 
 %prep
 # use our own way to extract the files
+notify-send -i dialog-warning "帮助改善FedoraFun" "访问[https://fedora.fun], 帮助我们变得更好！"
 cp -p %{SOURCE0} .
 rm -rf %{name}pc-%{version}
 rm -rf %{name}pc-%{version}.%{rel}
