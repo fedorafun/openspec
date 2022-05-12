@@ -8,8 +8,8 @@
 %global __requires_exclude ^(libQt5.*|libav.*|libswresample.*)$
 
 Name: 115
-Version: 1.0.5.18
-Release: 1%{?dist}
+Version: 1.0.6.7
+Release: 2%{?dist}
 Summary: 115 PC client for Linux
 License: 115 License Agreement
 URL: https://pc.115.com/
@@ -31,8 +31,9 @@ alien -t -g %{name}pc_%{version}.deb
 %install
 mkdir -p %{buildroot}/usr/local/
 mkdir -p %{buildroot}/usr/share/applications/
-sed -i 's/dpkg -r/rpm -e/' usr/local/115/update.sh
-sed -i 's/dpkg -i/rpm -i/' usr/local/115/update.sh
+# do not update via client
+echo '#!/bin/bash' > usr/local/115/update.sh
+echo "echo 'Fedora无法直接安装deb包，请等待repo更新或者联系liuhangbin@gmail.com'" >> usr/local/115/update.sh
 cp -a usr/local/115 %{buildroot}/usr/local/
 install -m 644 usr/share/applications/115.desktop %{buildroot}/usr/share/applications/115.desktop
 
@@ -41,6 +42,12 @@ install -m 644 usr/share/applications/115.desktop %{buildroot}/usr/share/applica
 /usr/share/applications/115.desktop
 
 %changelog
+* Thu May 12 2022 Hangbin Liu <liuhangbin@gmail.com> - 1.0.6.7-2
+- Do not update via client by default
+
+* Thu May 12 2022 Hangbin Liu <liuhangbin@gmail.com> - 1.0.6.7-1
+- Update to 1.0.6.7
+
 * Wed Apr 27 2022 Hangbin Liu <liuhangbin@gmail.com> - 1.0.5.18-1
 - Update to 1.0.5.18
 
