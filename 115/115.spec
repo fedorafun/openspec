@@ -8,8 +8,8 @@
 %global __requires_exclude ^(libQt5.*|libav.*|libswresample.*)$
 
 Name: 115
-Version: 1.0.6.7
-Release: 2%{?dist}
+Version: 1.0.7.7
+Release: 1%{?dist}
 Summary: 115 PC client for Linux
 License: 115 License Agreement
 URL: https://pc.115.com/
@@ -42,6 +42,9 @@ install -m 644 usr/share/applications/115.desktop %{buildroot}/usr/share/applica
 /usr/share/applications/115.desktop
 
 %changelog
+* Wed Jun 15 2022 Hangbin Liu <liuhangbin@gmail.com> - 1.0.7.7-1
+- Update to 1.0.7.7
+
 * Thu May 12 2022 Hangbin Liu <liuhangbin@gmail.com> - 1.0.6.7-2
 - Do not update via client by default
 
